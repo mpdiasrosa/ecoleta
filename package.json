@@ -1,0 +1,27 @@
+{
+  "name": "NLW",
+  "version": "1.0.0",
+  "description": "Repositório para expor o resultado do desenvolvimento de uma página com front em HTML, CSS e JavaScript e backend em Node.js, durante a Next Level Week - Starter.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpdiasrosa/NLW.git"
+  },
+  "keywords": [],
+  "author": "Maria Paula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpdiasrosa/NLW/issues"
+  },
+  "homepage": "https://github.com/mpdiasrosa/NLW#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

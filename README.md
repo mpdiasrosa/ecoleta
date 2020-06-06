@@ -1,6 +1,6 @@
 # NLW - Next Level Week
 
-Repositório para expor o resultado do desenvolvimento de uma página com front em HTML, CSS e JavaScript e backend em Node.js, durante a Next Level Week - Starter.
+Repositório para expor o resultado do desenvolvimento de um sistema com front em HTML, CSS e JavaScript e backend em Node.js, durante a Next Level Week - Starter.
 
 
 
@@ -143,6 +143,8 @@ Para trabalhar o HTML de modo integrado ao backend.
 
 ### Instalar o Nunjucks
 
+[Mozilla NonJucks](https://mozilla.github.io/nunjucks/);
+
 ```
 $ npm install nunjucks
 ```
@@ -179,8 +181,7 @@ server.get('/search', (request, response) => {
 
 
 
-## Plugin para o nunjucks
-Colorir partes do código onde o *nunjucks* está aplicado:
-https://github.com/eseom/nunjucks-template
-https://marketplace.visualstudio.com/items?itemName=eseom.nunjucks-template#overview
+## Nunjucks Template
+A extensão *NunJucks Template* do *VS Code* destaca partes do código onde o *NunJucks* está aplicado entre outras funcionalidades. Algumas configurações iniciais devem ser feitas para que funcione corretamente em extensões html.
 
+Acesso:  [Github - NunJucks Template](https://github.com/eseom/nunjucks-template) | [VS Code - NunJucks Template](https://marketplace.visualstudio.com/items?itemName=eseom.nunjucks-template#overview);

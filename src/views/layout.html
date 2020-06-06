@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% block title %}
-    <title>♻ Ecoleta</title>
+        <title>♻ Ecoleta</title>
     {% endblock title %}
 
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/responsive.css">
-
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="/styles/home.css">
     {% block styles %}{% endblock styles %}
 
 
 </head>
 
 <body>
-    <div id="{{ bodyId }}">
+    <div id="{{ pageId }}">
         {% block content %}{% endblock content %}
     </div>  
 

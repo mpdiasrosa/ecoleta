@@ -1,6 +1,6 @@
 # NLW - Next Level Week
 
-Repositório para expor o resultado do desenvolvimento de um sistema com front em HTML, CSS e JavaScript e backend em Node.js, durante a Next Level Week - Starter.
+Repositório para expor o resultado do desenvolvimento de um sistema com front em HTML, CSS e JavaScript, backend em Node.js e banco de dados SQL, durante a Next Level Week - Starter.
 
 
 
@@ -181,7 +181,136 @@ server.get('/search', (request, response) => {
 
 
 
-## Nunjucks Template
+### NunJucks Template
 A extensão *NunJucks Template* do *VS Code* destaca partes do código onde o *NunJucks* está aplicado entre outras funcionalidades. Algumas configurações iniciais devem ser feitas para que funcione corretamente em extensões html.
 
 Acesso:  [Github - NunJucks Template](https://github.com/eseom/nunjucks-template) | [VS Code - NunJucks Template](https://marketplace.visualstudio.com/items?itemName=eseom.nunjucks-template#overview);
+
+
+
+# SQLite
+
+## Instalação
+
+```
+$ npm install sqlite3
+```
+
+
+
+Para importar as dependências do *sqlite3* para o arquivo *./database/db.js*:
+
+```
+const sqlite3 = require("sqlite3").verbose()
+```
+
+Logo em seguida, ainda no *./database/db.js*, para criar o objeto que fará as operações no Banco de Dados:
+
+```
+const db = new sqlite3.Database("./src/database/database.db")
+```
+
+No terminal:
+
+```
+$ node src/database/db.js
+```
+
+Assim, o arquivo *database.db* foi gerado e adicionado ao projeto.
+
+
+
+Adicionar ao *server.js*:
+
+```
+const db = require("./database/db.js")
+```
+
+
+
+## Manipulando Tabelas com SQL
+
+**Criar** uma tabela com SQL:
+
+```sqlite
+db.run(`
+	CREATE TABLE IF NOT EXISTS places(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		image TEXT,
+		name TEXT,
+		address TEXT,
+		address2 TEXT,
+		state TEXT,
+		city TEXT,
+		items TEXT
+);
+`)
+```
+
+
+
+**Inserir** dados na tabela com SQL:
+
+```sqlite
+const query = `
+    INSERT INTO places (
+    	  image,
+    	  name,
+	      address,
+	      address2,
+	      state,
+	      city,
+	      items
+	    ) VALUES (?,?,?,?,?,?);
+`
+
+const values = [
+    "https://images.unsplash.com/photo-1518792528501-352f829886dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+	"Colectoria",
+	"Guilherme Gemballa, Jardim América ",
+	"Numero 260",
+	"Santa Catarina",
+	"Rio do Sul",
+	"Resíduos Eletrônicos, Lâmpadas" 
+]
+
+function afterInsertData(err){
+	if(err){
+		return console.log(err)
+	}
+	console.log("Cadastrado com sucesso!🙂")
+	console.log(this)
+}
+
+db.run(query, values, afterInsertData)
+```
+
+  
+
+**Consultar** os dados na tabela
+
+```sqlite
+db.all(`SELECT * FROM places`, function(err, rows){
+       if(err){
+       		return console.log(err)
+       }
+
+console.log("Aqui estão os registros! 🙂")
+console.log(rows)
+})
+
+```
+
+  
+
+ **Deletar** um dado da tabela (exemplo para deletar o dado de Id=[1])
+
+```sqlite
+db.run(`DELETE FROM places WHERE id = ?`, [1] function(err) {
+	if(err){
+		return console.log(err)
+}
+console.log("Registro excluído com sucesso! 🙂")
+})
+```
+

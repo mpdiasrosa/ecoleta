@@ -1,6 +1,6 @@
 # NLW - Next Level Week
 
-Repositório para expor o resultado do desenvolvimento de um sistema com front em HTML, CSS e JavaScript, backend em Node.js e banco de dados SQL, durante a Next Level Week - Starter.
+Repositório para expor o resultado do desenvolvimento de um sistema com front em *HTML*, *CSS* e *JavaScript*, backend em *Node.js* e banco de dados *SQL*, durante a *Next Level Week - Starter* disponibilizada pela [RocketSeat](https://rocketseat.com.br/).
 
 
 
